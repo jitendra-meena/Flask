@@ -19,3 +19,5 @@ class Movie(db.Model):
     # nullable is false so the column can't be empty
     year = db.Column(db.Integer, nullable=False)
     genre = db.Column(db.String(80), nullable=False)
+
+
