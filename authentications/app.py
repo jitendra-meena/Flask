@@ -1,59 +1,24 @@
-from flask import Flask
+from flask import Flask,Blueprint
 from flask_sqlalchemy import SQLAlchemy
-from flask import request,Response,jsonify
 
-app = Flask(__name__)
+
+
+app = Flask(__name__,template_folder="authentications/templates")
+
+
+
+
+"""
+DataBase Settings SQLAlchemy
+
+"""
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
+
 db = SQLAlchemy(app)
 
 
 
 
-  
-  
-  
 
-
-
-
-
-
-
-@app.route("/home")
-def home():
-  data = json.loads()
-  data = BDScale(sno=data[sno],title=data[title],desc = data[desc])
-  db.session.add(new_movie)
-  db.session.commit()
-  return Response(data)
-
-
-@app.route("/movies_list/<int:id>",methods=["GET"] )
-def movies_list():
-  movie = [Movies.json(movies) for movies in Movies.query.filter_by(id = id)]
-  return jsonify({'movie': movie})
-
-  
-
-# MongoDB User Data :<List>\\\\\\\\\\\\\\\\\\\\
-
-# @app.route("/home")
-# def home():
-#   users = Movie.db.user.find()
-#   usere = dumps(users)
-#   return usere
-
-@app.route("/user/<int:id>",methods=["GET"])
-def user_litss():
-  user = Movie.db.user.find_one({'_id':ObjectId(id)})
-  userr = dumps(user)
-  return userr
-
-
-
-
-
-if __name__ == "__main__":
-  app.run(debug=False)
-  
-  
+if __name__ =='__main__':
+  app.run(debug = True)

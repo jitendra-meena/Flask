@@ -11,7 +11,6 @@ class DBScale(db.Model):
     return self.title
 
 
-
 class Movie(db.Model):
     __tablename__ = 'movies'  # creating a table name
     id = db.Column(db.Integer, primary_key=True)  # this is the primary key
