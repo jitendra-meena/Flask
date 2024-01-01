@@ -16,18 +16,23 @@ Before you begin, ensure you have the following installed:
 ```bash
 git clone https://github.com/jitendra-meena/Flask.git
 cd flask-crud-docker
+```
+# Build and Run with Docker
 
+```bash
 
 # Build the Docker image
 docker build -t flask-crud-app .
 
 # Run the Docker container
 docker run -p 5000:5000 flask-crud-app
+```
 
 The Flask application should now be running at http://localhost:5000.
 
-Application Structure
+# Application Structure
 The project structure is organized as follows:
+```bash
 
 app/: The main package containing the Flask application.
 __init__.py: Initializes the Flask app and includes common configurations.
@@ -53,9 +58,10 @@ curl -X POST -H "Content-Type: application/json" -d '{"title": "New Task", "desc
 curl -X PUT -H "Content-Type: application/json" -d '{"title": "Updated Task", "description": "Updated description"}' http://localhost:5000/tasks/1
 curl -X DELETE http://localhost:5000/tasks/1
 
+```
 
-Dockerfile
+# Dockerfile
 The Dockerfile defines the steps to build the Docker image for the Flask application. It includes the necessary dependencies and sets up the environment for running the application.
 
-Contributing
+# Contributing
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
